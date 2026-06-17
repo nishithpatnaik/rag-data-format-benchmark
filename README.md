@@ -6,13 +6,13 @@ A hands-on benchmark exploring whether identical information behaves differently
 
 Several months ago, I came across TOON (Token-Oriented Object Notation), a format designed around token efficiency for LLMs.
 
-Could a format designed specifically for LLMs optimize token consumption, influence performance & behaviour inside a real Retrieval-Augmented Generation (RAG) system?
+Could a format designed specifically for LLMs optimize token consumption, influence behaviour inside a real Retrieval-Augmented Generation (RAG) system?
 
-I wanted to test that theory, but at the time, I didn't have a good way to test that theory.. Later, while learning and experimenting with RAG systems, I found myself revisiting the same question. I realized I now had the tools to evaluate it properly rather than relying on assumptions or claims.
+I wanted to test that theory, but at the time, I didn't have a practical way to do it.. Later, while learning and experimenting with RAG systems, I found myself revisiting the same question. I realized I now had the tools to evaluate it properly rather than relying on assumptions or claims.
 
 That curiosity eventually led to this case study.
 
-What started as an interest in TOON, became a practical benchmark involving:
+What started as an interest in TOON became a practical benchmark involving:
 
 - Token efficiency
 - Chunking behavior
@@ -68,7 +68,7 @@ Answer Generation
 
 The only thing that changed was the representation format.
 
-Everything else remained the same making this a fair comparison of token efficiency, retrieval behavior, and answer generation.
+Everything else remained the same, making it easier to isolate the uninteded impact on token efficiency, retrieval behavior, and answer generation.
 
 
 
@@ -133,6 +133,19 @@ A lower-scoring chunk could still generate a more complete response if it contai
 Even after validating that all formats preserved the same information, retrieval behavior was not always identical.
 
 Different representations created different chunk boundaries, different retrieval paths, and occasionally different answers.
+
+
+
+
+## What Surprised Me
+
+Going into this benchmark, I expected token efficiency to be the most interesting result. But it wasn't.
+
+The bigger surprise was seeing how different representations could influence chunking and retrieval behavior even when the underlying information remained unchanged.
+
+That reinforced an important lesson:
+
+In RAG systems, the way information is represented can matter just as much as the information itself.
 
 
 
