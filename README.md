@@ -68,7 +68,7 @@ Answer Generation
 
 The only thing that changed was the representation format.
 
-Everything else remained the same, making it easier to isolate the uninteded impact on token efficiency, retrieval behavior, and answer generation.
+Everything else remained the same, making it easier to isolate the impact on token efficiency, retrieval behavior, and answer generation.
 
 
 
@@ -167,10 +167,13 @@ In RAG systems, formatting is not just formatting.
 
 
 
-## Repository Contents
+## Repository Structure
 
 - 01_Input_data_format_fidelity_validation.ipynb
+  - Validates that all formats preserve equivalent information
+
 - 02_RAG_Benchmark_JSON_TOON_YAML.ipynb
+  - Compares token efficiency, chunking behavior, retrieval, and answer quality
 
 
 
